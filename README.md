@@ -1,11 +1,11 @@
-## simpletable
+## expresstable
 
 A quick and dirty Python package for creating simple tables. This was created to solve a specific problem, if you're looking for something with more power and customisation you should check out [tabulate](https://pypi.org/project/tabulate/) or [PrettyTable](https://pypi.org/project/PrettyTable/).
 
 #### Quick start
 Creating a table is straight forward...
 ```python
->>> from simpletable import Table
+>>> from expresstable import Table
 >>> table = Table()
 >>> table.add_row(["Name", "Age", "Gender"], header=True)
 >>> table.add_row(["Chris", 28, "M"])
@@ -25,7 +25,7 @@ Creating a table is straight forward...
 The characters used to display the vertical and horizontal border can be altered by passing the `vborder` and `hborder`keyword argument when creating the table; e.g.
 
 ```python
->>> from simpletable import Table
+>>> from expresstable import Table
 
 >>> table = Table(vborder=':', hborder='=')
 >>> table.add_row(["Name", "Age", "Gender"], header=True)
@@ -63,7 +63,7 @@ table.add_row(
 ```
 #### Example
 ```python
-from simpletable import Table, Cell
+from expresstable import Table, Cell
 
 table = Table(align="center")
 table.add_row([Cell("Name", align="left"), "Age", "Gender"], header=True)
@@ -73,7 +73,7 @@ table.add_row([Cell("Patrick", align="left"), 26, Cell("M", bold=True, bgcolor="
 print(table)
 ```
 
-![Screenshot](https://raw.githubusercontent.com/christopherdavidsmith/simpletable/master/images/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/christopherdavidsmith/expresstable/master/images/screenshot.png)
 
 #### Future
 - Add ability to control style of specific columns

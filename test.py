@@ -1,4 +1,4 @@
-from simpletable import Table, Cell
+from expresstable import Table, Cell
 
 table = Table(align="center")
 table.add_row([Cell("Name", align="left"), "Age", "Gender"], header=True)
