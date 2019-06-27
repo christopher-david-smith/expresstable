@@ -10,6 +10,9 @@ setuptools.setup(
     description='Quickly create tables in Python',
     url='https://github.com/christopherdavidsmith/expresstable',
     packages=setuptools.find_packages(),
+    install_requires=[
+        'termcolor>=1.1.0'
+    ],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
