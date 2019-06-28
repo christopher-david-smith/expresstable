@@ -54,10 +54,15 @@ class Header(Row):
 class LineBreak(Row):
 
     def as_string(self):
+
+        columns = 0
+        for row in self.parent.rows:
+            columns = len(row.cells) if len(row.cells) > columns else columns
+
         border_char = self.cells[0].text
         row = []
-        for index, cell in enumerate(self.cells):
-            row.append(Cell(border_char * self.parent.column_width(index), **self.kwargs).as_string(0, '-'))
+        for column in range(columns):
+            row.append(Cell(border_char * self.parent.column_width(column), **self.kwargs).as_string(0, border_char))
             row.append(Cell(border_char, **self.kwargs).as_string(0, ''))
 
         return ' ' + ''.join(row[:-1]) + ' '

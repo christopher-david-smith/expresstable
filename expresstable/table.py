@@ -64,7 +64,13 @@ class Table:
     def column_width(self, column_index):
         '''Return width of given column'''
 
-        cells = [len(row.cells[column_index].text) for row in self.rows]
+        cells = []
+        for row in self.rows:
+            try:
+                cells.append(len(row.cells[column_index].text))
+            except IndexError:
+                cells.append(0)
+
         return max(cells)
 
     def as_string(self):
